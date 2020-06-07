@@ -1,0 +1,9 @@
+[
+  {
+    "enable": true,
+    "targetPackage": "com.leadroyal.friposed",
+    "targetClassName": "com.leadroyal.friposed.MainActivity",
+    "targetMethodSig": "func(java.lang.String,int)",
+    "hookClassName": "com.leadroyal.friposed.SimpleHook"
+  }
+]
