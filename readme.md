@@ -64,6 +64,19 @@ SimpleHook: return null
 ### 基础用法
 
 1. 打开本项目里的安卓工程 `com.leadroyal.friposed` ，按需修改 `assets/friposed.json`，并且创建对应实现了 `com.leadroyal.friposed.IHook`的类。
+
+    ```json
+    [
+      {
+        "enable": true,
+        "targetPackage": "com.leadroyal.friposed",
+        "targetClassName": "com.leadroyal.friposed.MainActivity",
+        "targetMethodSig": "func(java.lang.String,int)",
+        "hookClassName": "com.leadroyal.friposed.SimpleHook"
+      }
+    ]
+    ```
+
 2. 开发自定义的 Hook（一定要实现 IHook这个接口）。提供基础功能：在`beforeHook`和`afterHook` 对 arguments 进行读写，对 result 进行读写，从而实现`XC_MethodHook`，使用 setResult 实现 `XC_MethodReplacement`。
 3. 安装 `friposed.apk` 或者 `adb push friposed.apk /data/local/tmp/`，
 4. `frida -U friposed.js TARGET_PACKAGE_NAME`
